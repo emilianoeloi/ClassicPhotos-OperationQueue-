@@ -124,59 +124,44 @@ class ListViewController: UITableViewController {
     }
     
     func fetchPhotoDetails() {
-        let request = URLRequest(url: dataSourceURL)
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        // 1
-        let task = URLSession(configuration: .default).dataTask(with: request) { data, response, error in
+        let alertController = UIAlertController(title: "Oops!",
+                                                message: "There was an error fetching photo details.",
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        
+        guard  let path = Bundle.main.path(forResource: "BrazilStates", ofType: "plist"),
+               let data = FileManager.default.contents(atPath: path) else {
+            self.present(alertController, animated: true, completion: nil)
+            return
             
-            // 2
-            let alertController = UIAlertController(title: "Oops!",
-                                                    message: "There was an error fetching photo details.",
-                                                    preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default)
-            alertController.addAction(okAction)
+        }
+
+        do {
+            let datasourceDictionary =
+                try PropertyListSerialization.propertyList(from: data,
+                                                           options: [],
+                                                           format: nil) as! [String: String]
             
-            if let data = data {
-                do {
-                    // 3
-                    let datasourceDictionary =
-                        try PropertyListSerialization.propertyList(from: data,
-                                                                   options: [],
-                                                                   format: nil) as! [String: String]
-                    
-                    // 4
-                    for (name, value) in datasourceDictionary {
-                        let url = URL(string: value)
-                        if let url = url {
-                            let photoRecord = PhotoRecord(name: name, url: url)
-                            self.photos.append(photoRecord)
-                        }
-                    }
-                    
-                    // 5
-                    DispatchQueue.main.async {
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                        self.tableView.reloadData()
-                    }
-                    // 6
-                } catch {
-                    DispatchQueue.main.async {
-                        self.present(alertController, animated: true, completion: nil)
-                    }
+            for (name, value) in datasourceDictionary {
+                print("=== value \(value)")
+                let url = URL(string: value)
+                if let url = url {
+                    let photoRecord = PhotoRecord(name: name, url: url)
+                    self.photos.append(photoRecord)
                 }
             }
             
-            // 6
-            if error != nil {
-                DispatchQueue.main.async {
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.present(alertController, animated: true, completion: nil)
-                }
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.tableView.reloadData()
+            }
+        } catch {
+            DispatchQueue.main.async {
+                self.present(alertController, animated: true, completion: nil)
             }
         }
-        // 7
-        task.resume()
     }
     
     

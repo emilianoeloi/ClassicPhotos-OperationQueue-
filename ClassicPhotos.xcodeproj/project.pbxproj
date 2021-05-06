@@ -13,6 +13,7 @@
 		27DF646519657A9300B42725 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27DF646419657A9300B42725 /* Images.xcassets */; };
 		27DF647B19657AD900B42725 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF647A19657AD900B42725 /* Storyboard.storyboard */; };
 		27DF647D19657B7500B42725 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF647C19657B7500B42725 /* ListViewController.swift */; };
+		ACB6C4D52643796D0028F4AC /* BrazilStates.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACB6C4D42643796D0028F4AC /* BrazilStates.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		27DF646419657A9300B42725 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		27DF647A19657AD900B42725 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		27DF647C19657B7500B42725 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		ACB6C4D42643796D0028F4AC /* BrazilStates.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BrazilStates.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		27DF645F19657A9300B42725 /* ClassicPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				ACB6C4D42643796D0028F4AC /* BrazilStates.plist */,
 				182A6AE920DDB39B00857A08 /* LaunchScreen.storyboard */,
 				27DF646219657A9300B42725 /* AppDelegate.swift */,
 				27DF646419657A9300B42725 /* Images.xcassets */,
@@ -115,6 +118,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 27DF645419657A9300B42725;
@@ -132,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB6C4D52643796D0028F4AC /* BrazilStates.plist in Resources */,
 				182A6AEA20DDB39B00857A08 /* LaunchScreen.storyboard in Resources */,
 				27DF646519657A9300B42725 /* Images.xcassets in Resources */,
 				27DF647B19657AD900B42725 /* Storyboard.storyboard in Resources */,

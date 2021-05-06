@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Minas Gerais</key>
+	<string>https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Bandeira_de_Minas_Gerais.svg/1280px-Bandeira_de_Minas_Gerais.svg.png</string>
+	<key>Amazonas</key>
+	<string>https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Bandeira_do_Amazonas.svg/1280px-Bandeira_do_Amazonas.svg.png</string>
+	<key>Ceará</key>
+	<string>https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Bandeira_do_Ceará.svg/1280px-Bandeira_do_Ceará.svg.png</string>
+	<key>Rio de Janeiro</key>
+	<string>https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Bandeira_do_estado_do_Rio_de_Janeiro.svg/1280px-Bandeira_do_estado_do_Rio_de_Janeiro.svg.png</string>
+	<key>São Paulo</key>
+	<string>https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bandeira_do_estado_de_São_Paulo.svg/1920px-Bandeira_do_estado_de_São_Paulo.svg.png</string>
+</dict>
+</plist>
