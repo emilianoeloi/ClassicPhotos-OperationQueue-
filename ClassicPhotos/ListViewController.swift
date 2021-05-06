@@ -145,8 +145,8 @@ class ListViewController: UITableViewController {
                                                            format: nil) as! [String: String]
             
             for (name, value) in datasourceDictionary {
-                print("=== value \(value)")
-                let url = URL(string: value)
+                guard let valueURL = value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+                let url = URL(string: valueURL)
                 if let url = url {
                     let photoRecord = PhotoRecord(name: name, url: url)
                     self.photos.append(photoRecord)
